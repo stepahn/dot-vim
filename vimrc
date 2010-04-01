@@ -13,6 +13,8 @@ set cursorline
 :filetype plugin on
 set listchars=tab:‣\ ,eol:¬
 set list
+set hidden
+
 if has("gui_running")
     set guioptions=egmrt
     set guifont=Menlo\ Regular:h15.00
