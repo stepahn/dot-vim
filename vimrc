@@ -14,6 +14,8 @@ set cursorline
 set listchars=tab:‣\ ,eol:¬
 set list
 set hidden
+set noerrorbells
+set laststatus=2
 
 if has("gui_running")
     set guioptions=egmrt
