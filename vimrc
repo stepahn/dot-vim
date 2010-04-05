@@ -1,5 +1,6 @@
 syntax on
 colorscheme torte
+filetype plugin on
 set autoindent
 set smartindent
 set tabstop=2 shiftwidth=2 softtabstop=2 expandtab
@@ -10,7 +11,6 @@ set ruler
 set incsearch
 set number
 set cursorline
-:filetype plugin on
 set listchars=tab:‣\ ,eol:¬
 set list
 set hidden
