@@ -17,6 +17,8 @@ set hidden
 set noerrorbells
 set laststatus=2
 
+nnoremap <esc> :noh<return><esc>
+
 if has("gui_running")
     set guioptions=egmrt
     set guifont=Menlo\ Regular:h15.00
