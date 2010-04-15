@@ -1,5 +1,5 @@
 syntax on
-colorscheme torte
+colorscheme vividchalk
 filetype plugin on
 set autoindent
 set smartindent
