@@ -11,7 +11,7 @@ set ruler
 set incsearch
 set number
 set cursorline
-set listchars=tab:‣\ ,eol:¬
+set listchars=tab:‣\ ,eol:¬,trail:·,nbsp:□,extends:…
 set list
 set hidden
 set noerrorbells
