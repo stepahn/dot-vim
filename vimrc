@@ -40,4 +40,6 @@ endfunction
 
 if has("autocmd")
   autocmd BufWritePre *.py,*.js,*.html,*.haml,*.rb,*.feature,*.erb,*.sass :call <SID>StripTrailingWhitespaces()
+  highlight BadWhitespace ctermbg=red guibg=red
+  autocmd BufRead,BufNewFile *.rb,*.rake,*.feature,*.sass,*.erb,*.haml match BadWhitespace /[\s\t]+$/
 end
