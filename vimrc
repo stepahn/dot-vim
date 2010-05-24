@@ -16,6 +16,8 @@ set list
 set hidden
 set noerrorbells
 set laststatus=2
+set ignorecase
+set smartcase
 
 nnoremap <esc> :noh<return><esc>
 
