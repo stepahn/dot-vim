@@ -15,6 +15,7 @@ set listchars=tab:‣\ ,eol:¬,trail:·,nbsp:□,extends:…
 set list
 set hidden
 set noerrorbells
+set visualbell
 set laststatus=2
 set ignorecase
 set smartcase
