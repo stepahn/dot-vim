@@ -19,6 +19,7 @@ set visualbell
 set laststatus=2
 set ignorecase
 set smartcase
+set hls
 
 nnoremap <esc> :noh<return><esc>
 
