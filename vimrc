@@ -1,5 +1,5 @@
 syntax on
-colorscheme vividchalk
+colorscheme ir_black
 filetype plugin on
 set autoindent
 set smartindent
