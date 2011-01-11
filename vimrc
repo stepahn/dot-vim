@@ -46,4 +46,9 @@ if has("autocmd")
   autocmd BufWritePre *.py,*.js,*.html,*.haml,*.rb,*.feature,*.erb,*.sass :call <SID>StripTrailingWhitespaces()
   highlight BadWhitespace ctermbg=red guibg=red
   autocmd BufRead,BufNewFile *.rb,*.rake,*.feature,*.sass,*.erb,*.haml match BadWhitespace /[\s\t]+$/
+
+  augroup BWCCreateDir
+      au!
+      autocmd BufWritePre * if expand("<afile>")!~#'^\w\+:/' && !isdirectory(expand("%:h")) | execute "silent! !mkdir -p %:h" | redraw! | endif
+  augroup END
 end
