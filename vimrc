@@ -1,8 +1,16 @@
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
-syntax on
-colorscheme ir_black
+syntax enable
+
+if has('gui_running')
+    set background=light
+else
+    set background=dark
+endif
+
+colorscheme solarized
+
 filetype plugin on
 set autoindent
 set smartindent
@@ -55,3 +63,4 @@ if has("autocmd")
       autocmd BufWritePre * if expand("<afile>")!~#'^\w\+:/' && !isdirectory(expand("%:h")) | execute "silent! !mkdir -p %:h" | redraw! | endif
   augroup END
 end
+
