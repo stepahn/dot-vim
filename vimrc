@@ -53,10 +53,15 @@ function! <SID>StripTrailingWhitespaces()
   call cursor(l, c)
 endfunction
 
+function! EnablePythonStyles()
+  set shiftwidth=4 tabstop=4 shiftwidth=4 softtabstop=4
+endfunction
+
 if has("autocmd")
-  autocmd BufWritePre *.py,*.js,*.html,*.haml,*.rb,*.feature,*.erb,*.sass :call <SID>StripTrailingWhitespaces()
+  autocmd BufWritePre *.php,Gemfile,*.py,*.js,*.html,*.haml,*.rb,*.feature,*.erb,*.sass :call <SID>StripTrailingWhitespaces()
   highlight BadWhitespace ctermbg=red guibg=red
-  autocmd BufRead,BufNewFile *.rb,*.rake,*.feature,*.sass,*.erb,*.haml match BadWhitespace /[\s\t]+$/
+  autocmd BufRead,BufNewFile *.php,Gemfile,*.py,*.js,*.rb,*.rake,*.feature,*.sass,*.erb,*.haml match BadWhitespace /\s\+$/
+  autocmd BufRead,BufNewFile *.py :call EnablePythonStyles()
 
   augroup BWCCreateDir
       au!
