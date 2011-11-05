@@ -32,6 +32,11 @@ set ignorecase
 set smartcase
 set hls
 
+set foldmethod=indent
+set foldnestmax=10
+set nofoldenable
+set foldlevel=1
+
 nnoremap <esc> :noh<return><esc>
 
 if has("gui_running")
