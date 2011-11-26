@@ -19,3 +19,6 @@
 [submodule "bundle/rubytest"]
 	path = bundle/rubytest
 	url = https://github.com/stepahn/vim-rubytest.git
+[submodule "bundle/command-t"]
+	path = bundle/command-t
+	url = git://git.wincent.com/command-t.git
