@@ -85,3 +85,4 @@ end
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 
 command W w
+command E e
