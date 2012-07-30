@@ -42,6 +42,8 @@ set foldnestmax=10
 set nofoldenable
 set foldlevel=1
 
+set wildignore+=.git,.svn,tmp/**,*.jpg,*.png,*.gif,*.jpeg
+
 
 if has("gui_running")
     set guioptions=egmrt
