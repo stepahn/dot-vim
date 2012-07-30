@@ -77,6 +77,7 @@ if has("autocmd")
       autocmd BufWritePre * if expand("<afile>")!~#'^\w\+:/' && !isdirectory(expand("%:h")) | execute "silent! !mkdir -p %:h" | redraw! | endif
   augroup END
   autocmd BufReadPost fugitive://* set bufhidden=delete
+  autocmd BufNewFile,BufRead *.hamstache setf haml
 end
 
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
