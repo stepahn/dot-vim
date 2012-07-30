@@ -67,7 +67,7 @@ function! EnablePythonStyles()
 endfunction
 
 if has("autocmd")
-  autocmd BufWritePre *.php,Gemfile,*.py,*.js,*.html,*.haml,*.rb,*.feature,*.erb,*.sass :call <SID>StripTrailingWhitespaces()
+  autocmd BufWritePre *.php,Gemfile,*.py,*.js,*.html,*.haml,*.rb,*.rake,*.feature,*.erb,*.sass :call <SID>StripTrailingWhitespaces()
   highlight BadWhitespace ctermbg=red guibg=red
   autocmd BufRead,BufNewFile *.php,Gemfile,*.py,*.js,*.rb,*.rake,*.feature,*.sass,*.erb,*.haml match BadWhitespace /\s\+$/
   autocmd BufRead,BufNewFile *.py :call EnablePythonStyles()
