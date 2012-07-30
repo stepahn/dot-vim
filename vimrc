@@ -6,10 +6,13 @@ syntax enable
 set background=light
 
 if has('gui_running')
+    nnoremap <esc> :noh<return><esc>
 else
     let g:solarized_termcolors=256
     let g:solarized_termtrans=1
 endif
+
+nnoremap <CR> :noh<CR><CR>
 
 colorscheme solarized
 
@@ -39,7 +42,6 @@ set foldnestmax=10
 set nofoldenable
 set foldlevel=1
 
-nnoremap <esc> :noh<return><esc>
 
 if has("gui_running")
     set guioptions=egmrt
