@@ -82,6 +82,7 @@ if has("autocmd")
   augroup END
   autocmd BufReadPost fugitive://* set bufhidden=delete
   autocmd BufNewFile,BufRead *.hamstache setf haml
+  autocmd BufNewFile,BufRead *.rabl setf ruby
 end
 
 set statusline=%<%f\ %h%m%r
