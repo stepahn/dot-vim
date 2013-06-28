@@ -42,7 +42,7 @@ set foldnestmax=10
 set nofoldenable
 set foldlevel=1
 
-set wildignore+=.git,.svn,tmp/**,*.jpg,*.png,*.gif,*.jpeg
+set wildignore+=.git,.svn,tmp/**,*.jpg,*.png,*.gif,*.jpeg,*.pyc
 
 let g:syntastic_python_checker_args='--ignore=E501'
 let g:syntastic_check_on_open=1
