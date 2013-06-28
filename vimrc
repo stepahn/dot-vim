@@ -44,6 +44,8 @@ set foldlevel=1
 
 set wildignore+=.git,.svn,tmp/**,*.jpg,*.png,*.gif,*.jpeg
 
+let g:syntastic_python_checker_args='--ignore=E501'
+let g:syntastic_check_on_open=1
 
 if has("gui_running")
     set guioptions=egmrt
