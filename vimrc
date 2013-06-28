@@ -84,7 +84,11 @@ if has("autocmd")
   autocmd BufNewFile,BufRead *.hamstache setf haml
 end
 
-set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
+set statusline=%<%f\ %h%m%r
+set statusline+=%{fugitive#statusline()}
+set statusline+=%#warningmsg#
+set statusline+=%*
+set statusline+=%=%-14.(%l,%c%V%)\ %P
 
 command W w
 command E e
