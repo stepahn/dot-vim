@@ -1,3 +1,5 @@
+set nocompatible
+
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
@@ -17,12 +19,13 @@ nnoremap <CR> :noh<CR><CR>
 colorscheme solarized
 
 filetype plugin on
+filetype plugin indent on
+set backspace=indent,eol,start
 set autoindent
 set smartindent
 set tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 set smarttab
 set showmatch
-set nocompatible
 set ruler
 set incsearch
 set number
@@ -36,6 +39,8 @@ set laststatus=2
 set ignorecase
 set smartcase
 set hls
+set splitbelow
+set splitright
 
 set foldmethod=indent
 set foldnestmax=10
@@ -71,9 +76,9 @@ function! EnablePythonStyles()
 endfunction
 
 if has("autocmd")
-  autocmd BufWritePre *.php,Gemfile,*.py,*.js,*.html,*.haml,*.rb,*.rake,*.feature,*.erb,*.sass :call <SID>StripTrailingWhitespaces()
+  autocmd BufWritePre *.scss,*.css,*.coffee,*.php,Gemfile,*.py,*.js,*.html,*.haml,*.rb,*.rake,*.feature,*.erb,*.sass :call <SID>StripTrailingWhitespaces()
   highlight BadWhitespace ctermbg=red guibg=red
-  autocmd BufRead,BufNewFile *.php,Gemfile,*.py,*.js,*.rb,*.rake,*.feature,*.sass,*.erb,*.haml match BadWhitespace /\s\+$/
+  autocmd BufRead,BufNewFile *.scss,*.css,*.coffee*.php,Gemfile,*.py,*.js,*.rb,*.rake,*.feature,*.sass,*.erb,*.haml match BadWhitespace /\s\+$/
   autocmd BufRead,BufNewFile *.py :call EnablePythonStyles()
 
   augroup BWCCreateDir
@@ -81,8 +86,9 @@ if has("autocmd")
       autocmd BufWritePre * if expand("<afile>")!~#'^\w\+:/' && !isdirectory(expand("%:h")) | execute "silent! !mkdir -p %:h" | redraw! | endif
   augroup END
   autocmd BufReadPost fugitive://* set bufhidden=delete
+
   autocmd BufNewFile,BufRead *.hamstache setf haml
-  autocmd BufNewFile,BufRead *.rabl setf ruby
+  autocmd BufNewFile,BufRead *.csvbuilder,*.rabl,*.jbuilder setf ruby
 end
 
 set statusline=%<%f\ %h%m%r
@@ -91,5 +97,22 @@ set statusline+=%#warningmsg#
 set statusline+=%*
 set statusline+=%=%-14.(%l,%c%V%)\ %P
 
+command -nargs=+ PyAck Ack --python <q-args>
+command -nargs=+ RAck Ack --ignore-dir=tmp --ignore-dir=public --ignore-dir=vendor <q-args>
+
 command W w
 command E e
+
+command! -nargs=* Wrap set wrap linebreak nolist
+
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+
+if executable('ag')
+  set grepprg=ag\ --nogroup\ --nocolor
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+  " let g:ctrlp_use_caching = 0
+endif
+
+let g:syntastic_check_on_open=1
+
+:command Wd write|bdelete
