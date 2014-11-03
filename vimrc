@@ -106,6 +106,11 @@ set foldlevel=1
 
 set wildignore+=.git,.svn,*/tmp/*,*.jpg,*.png,*.gif,*.jpeg,*.pyc
 
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
 let g:syntastic_python_checker_args='--ignore=E501'
 let g:syntastic_check_on_open=1
 
