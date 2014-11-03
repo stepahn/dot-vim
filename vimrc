@@ -1,7 +1,64 @@
 set nocompatible
 
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
+"NeoBundle Scripts-----------------------------
+if has('vim_starting')
+  set nocompatible               " Be iMproved
+
+  " Required:
+  set runtimepath+=~/.vim/bundle/neobundle.vim/
+endif
+
+" Required:
+call neobundle#begin(expand('~/.vim/bundle'))
+
+" Let NeoBundle manage NeoBundle
+" Required:
+"
+NeoBundle 'Shougo/neobundle.vim'
+
+NeoBundle 'MarcWeber/vim-addon-mw-utils'
+NeoBundle 'altercation/vim-colors-solarized'
+NeoBundle 'christoomey/vim-tmux-navigator'
+NeoBundle 'danro/rename.vim'
+NeoBundle 'ervandew/supertab'
+NeoBundle 'godlygeek/tabular'
+NeoBundle 'jgdavey/vim-blockle'
+NeoBundle 'kchmck/vim-coffee-script'
+NeoBundle 'kien/ctrlp.vim'
+NeoBundle 'kien/rainbow_parentheses.vim'
+NeoBundle 'mileszs/ack.vim'
+NeoBundle 'rking/ag.vim'
+NeoBundle 'scrooloose/nerdtree'
+NeoBundle 'scrooloose/syntastic'
+NeoBundle 'thoughtbot/vim-rspec'
+NeoBundle 'timcharper/textile.vim'
+NeoBundle 'tomtom/tlib_vim'
+NeoBundle 'tpope/vim-bundler'
+NeoBundle 'tpope/vim-cucumber'
+NeoBundle 'tpope/vim-endwise'
+NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'tpope/vim-haml'
+NeoBundle 'tpope/vim-rails'
+NeoBundle 'tpope/vim-surround'
+NeoBundle 'troydm/pb.vim'
+NeoBundle 'vim-ruby/vim-ruby'
+NeoBundle 'vim-scripts/matchit.zip'
+NeoBundle 'vim-scripts/tComment'
+
+" Required:
+call neobundle#end()
+
+" Required:
+filetype plugin indent on
+
+" If there are uninstalled bundles found on startup,
+" this will conveniently prompt you to install them.
+NeoBundleCheck
+
+"End NeoBundle Scripts-------------------------
+
+" call pathogen#runtime_append_all_bundles()
+" call pathogen#helptags()
 
 syntax enable
 
@@ -105,11 +162,9 @@ command E e
 
 command! -nargs=* Wrap set wrap linebreak nolist
 
-set runtimepath^=~/.vim/bundle/ctrlp.vim
-
 if executable('ag')
   set grepprg=ag\ --nogroup\ --nocolor
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+  " let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
   " let g:ctrlp_use_caching = 0
 endif
 
