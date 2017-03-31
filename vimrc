@@ -114,8 +114,18 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
-let g:syntastic_python_checker_args='--ignore=E501'
-let g:syntastic_check_on_open=1
+" syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_ruby_checkers = ['mri', 'rubocop']
+let g:syntastic_ruby_rubocop_args='--except Metrics/LineLength -D'
+let g:syntastic_python_flake8_args='--ignore=E501'
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 2
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 if has("gui_running")
     set guioptions=egmrt
@@ -176,6 +186,5 @@ if executable('ag')
   " let g:ctrlp_use_caching = 0
 endif
 
-let g:syntastic_check_on_open=1
 
 :command Wd write|bdelete
