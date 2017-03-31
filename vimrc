@@ -68,7 +68,7 @@ syntax enable
 set background=light
 
 if has('gui_running')
-    nnoremap <esc> :noh<return><esc>
+    " nnoremap <esc> :noh<return><esc>
 else
     let g:solarized_termcolors=256
     let g:solarized_termtrans=1
