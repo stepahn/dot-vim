@@ -1,64 +1,67 @@
 set nocompatible
 
-"NeoBundle Scripts-----------------------------
-if has('vim_starting')
+"dein Scripts-----------------------------
+if &compatible
   set nocompatible               " Be iMproved
-
-  " Required:
-  set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 
 " Required:
-call neobundle#begin(expand('~/.vim/bundle'))
-
-" Let NeoBundle manage NeoBundle
-" Required:
-"
-NeoBundle 'Shougo/neobundle.vim'
-
-NeoBundle 'MarcWeber/vim-addon-mw-utils'
-NeoBundle 'altercation/vim-colors-solarized'
-NeoBundle 'christoomey/vim-tmux-navigator'
-NeoBundle 'danro/rename.vim'
-NeoBundle 'ervandew/supertab'
-NeoBundle 'godlygeek/tabular'
-NeoBundle 'jgdavey/vim-blockle'
-NeoBundle 'kchmck/vim-coffee-script'
-NeoBundle 'kien/ctrlp.vim'
-NeoBundle 'kien/rainbow_parentheses.vim'
-NeoBundle 'mileszs/ack.vim'
-NeoBundle 'rking/ag.vim'
-NeoBundle 'scrooloose/nerdtree'
-NeoBundle 'scrooloose/syntastic'
-NeoBundle 'thoughtbot/vim-rspec'
-NeoBundle 'timcharper/textile.vim'
-NeoBundle 'tomtom/tlib_vim'
-NeoBundle 'tpope/vim-bundler'
-NeoBundle 'tpope/vim-cucumber'
-NeoBundle 'tpope/vim-endwise'
-NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'tpope/vim-haml'
-NeoBundle 'tpope/vim-rails'
-NeoBundle 'tpope/vim-surround'
-NeoBundle 'troydm/pb.vim'
-NeoBundle 'vim-ruby/vim-ruby'
-NeoBundle 'vim-scripts/matchit.zip'
-NeoBundle 'vim-scripts/tComment'
+set runtimepath+=~/.vim/dein/repos/github.com/Shougo/dein.vim
 
 " Required:
-call neobundle#end()
+call dein#begin(expand('~/.vim/dein/'))
+
+" Let dein manage dein
+" Required:
+call dein#add('Shougo/dein.vim')
+
+call dein#add('MarcWeber/vim-addon-mw-utils')
+call dein#add('altercation/vim-colors-solarized')
+call dein#source('vim-colors-solarized')
+call dein#add('christoomey/vim-tmux-navigator')
+call dein#add('danro/rename.vim')
+call dein#add('ervandew/supertab')
+call dein#add('godlygeek/tabular')
+call dein#add('jgdavey/vim-blockle')
+call dein#add('kchmck/vim-coffee-script')
+call dein#add('kien/ctrlp.vim')
+call dein#add('kien/rainbow_parentheses.vim')
+call dein#add('mileszs/ack.vim')
+call dein#add('rking/ag.vim')
+call dein#add('scrooloose/nerdtree')
+call dein#add('scrooloose/syntastic')
+call dein#add('thoughtbot/vim-rspec')
+call dein#add('timcharper/textile.vim')
+call dein#add('tomtom/tlib_vim')
+call dein#add('tpope/vim-bundler')
+call dein#add('tpope/vim-cucumber')
+call dein#add('tpope/vim-endwise')
+call dein#add('tpope/vim-fugitive')
+call dein#add('tpope/vim-haml')
+call dein#add('tpope/vim-rails')
+call dein#add('tpope/vim-surround')
+call dein#add('troydm/pb.vim')
+call dein#add('vim-ruby/vim-ruby')
+call dein#add('vim-scripts/matchit.zip')
+call dein#add('vim-scripts/tComment')
+call dein#add('vim-scripts/CountJump')
+call dein#add('vim-scripts/ingo-library')
+call dein#add('vim-scripts/ConflictMotions')
+call dein#add('vim-scripts/ConflictDetection')
+call dein#add('rizzatti/dash.vim')
+
+" Required:
+call dein#end()
 
 " Required:
 filetype plugin indent on
 
-" If there are uninstalled bundles found on startup,
-" this will conveniently prompt you to install them.
-NeoBundleCheck
+" If you want to install not installed plugins on startup.
+"if dein#check_install()
+"  call dein#install()
+"endif
 
-"End NeoBundle Scripts-------------------------
-
-" call pathogen#runtime_append_all_bundles()
-" call pathogen#helptags()
+"End dein Scripts-------------------------
 
 syntax enable
 
