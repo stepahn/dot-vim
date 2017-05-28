@@ -30,7 +30,7 @@ if dein#load_state('/home/pi/.vim/dein')
   call dein#add('mileszs/ack.vim')
   call dein#add('rking/ag.vim')
   call dein#add('scrooloose/nerdtree')
-  call dein#add('scrooloose/syntastic')
+  " call dein#add('scrooloose/syntastic')
   call dein#add('thoughtbot/vim-rspec')
   call dein#add('timcharper/textile.vim')
   call dein#add('tomtom/tlib_vim')
@@ -119,17 +119,17 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
 " syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_ruby_checkers = ['mri', 'rubocop']
-let g:syntastic_ruby_rubocop_args='--except Metrics/LineLength -D'
-let g:syntastic_python_flake8_args='--ignore=E501'
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 2
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
+" 
+" let g:syntastic_ruby_checkers = ['mri', 'rubocop']
+" let g:syntastic_ruby_rubocop_args='--except Metrics/LineLength -D -E'
+" let g:syntastic_python_flake8_args='--ignore=E501'
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 2
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 0
 
 if has("gui_running")
     set guioptions=egmrt
