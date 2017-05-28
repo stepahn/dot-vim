@@ -67,6 +67,7 @@ filetype plugin indent on
 "End dein Scripts-------------------------
 
 syntax enable
+set foldmethod=syntax
 
 set background=light
 
