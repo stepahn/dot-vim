@@ -8,50 +8,53 @@ endif
 " Required:
 set runtimepath+=~/.vim/dein/repos/github.com/Shougo/dein.vim
 
-" Required:
-call dein#begin(expand('~/.vim/dein/'))
+if dein#load_state('/home/pi/.vim/dein')
+  " Required:
+  call dein#begin(expand('~/.vim/dein/'))
 
-" Let dein manage dein
-" Required:
-call dein#add('Shougo/dein.vim')
+  " Let dein manage dein
+  " Required:
+  call dein#add('Shougo/dein.vim')
 
-call dein#add('MarcWeber/vim-addon-mw-utils')
-call dein#add('altercation/vim-colors-solarized')
-call dein#source('vim-colors-solarized')
-call dein#add('christoomey/vim-tmux-navigator')
-call dein#add('danro/rename.vim')
-call dein#add('ervandew/supertab')
-call dein#add('godlygeek/tabular')
-call dein#add('jgdavey/vim-blockle')
-call dein#add('kchmck/vim-coffee-script')
-call dein#add('kien/ctrlp.vim')
-call dein#add('kien/rainbow_parentheses.vim')
-call dein#add('mileszs/ack.vim')
-call dein#add('rking/ag.vim')
-call dein#add('scrooloose/nerdtree')
-call dein#add('scrooloose/syntastic')
-call dein#add('thoughtbot/vim-rspec')
-call dein#add('timcharper/textile.vim')
-call dein#add('tomtom/tlib_vim')
-call dein#add('tpope/vim-bundler')
-call dein#add('tpope/vim-cucumber')
-call dein#add('tpope/vim-endwise')
-call dein#add('tpope/vim-fugitive')
-call dein#add('tpope/vim-haml')
-call dein#add('tpope/vim-rails')
-call dein#add('tpope/vim-surround')
-call dein#add('troydm/pb.vim')
-call dein#add('vim-ruby/vim-ruby')
-call dein#add('vim-scripts/matchit.zip')
-call dein#add('vim-scripts/tComment')
-call dein#add('vim-scripts/CountJump')
-call dein#add('vim-scripts/ingo-library')
-call dein#add('vim-scripts/ConflictMotions')
-call dein#add('vim-scripts/ConflictDetection')
-call dein#add('rizzatti/dash.vim')
+  call dein#add('MarcWeber/vim-addon-mw-utils')
+  call dein#add('altercation/vim-colors-solarized')
+  call dein#source('vim-colors-solarized')
+  call dein#add('christoomey/vim-tmux-navigator')
+  call dein#add('danro/rename.vim')
+  call dein#add('ervandew/supertab')
+  call dein#add('godlygeek/tabular')
+  call dein#add('jgdavey/vim-blockle')
+  call dein#add('kchmck/vim-coffee-script')
+  call dein#add('kien/ctrlp.vim')
+  call dein#add('kien/rainbow_parentheses.vim')
+  call dein#add('mileszs/ack.vim')
+  call dein#add('rking/ag.vim')
+  call dein#add('scrooloose/nerdtree')
+  call dein#add('scrooloose/syntastic')
+  call dein#add('thoughtbot/vim-rspec')
+  call dein#add('timcharper/textile.vim')
+  call dein#add('tomtom/tlib_vim')
+  call dein#add('tpope/vim-bundler')
+  call dein#add('tpope/vim-cucumber')
+  call dein#add('tpope/vim-endwise')
+  call dein#add('tpope/vim-fugitive')
+  call dein#add('tpope/vim-haml')
+  call dein#add('tpope/vim-rails')
+  call dein#add('tpope/vim-surround')
+  call dein#add('troydm/pb.vim')
+  call dein#add('vim-ruby/vim-ruby')
+  call dein#add('vim-scripts/matchit.zip')
+  call dein#add('vim-scripts/tComment')
+  call dein#add('vim-scripts/CountJump')
+  call dein#add('vim-scripts/ingo-library')
+  call dein#add('vim-scripts/ConflictMotions')
+  call dein#add('vim-scripts/ConflictDetection')
+  call dein#add('rizzatti/dash.vim')
 
-" Required:
-call dein#end()
+  " Required:
+  call dein#end()
+  call dein#save_state()
+endif
 
 " Required:
 filetype plugin indent on
