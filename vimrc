@@ -51,6 +51,7 @@ if dein#load_state('/home/pi/.vim/dein')
   call dein#add('vim-scripts/ConflictDetection')
   call dein#add('rizzatti/dash.vim')
   call dein#add('vim-airline/vim-airline')
+  call dein#add('w0rp/ale')
 
   " Required:
   call dein#end()
@@ -131,6 +132,9 @@ nnoremap <C-H> <C-W><C-H>
 " let g:syntastic_auto_loc_list = 2
 " let g:syntastic_check_on_open = 1
 " let g:syntastic_check_on_wq = 0
+
+let g:ale_ruby_rubocop_options='--except Metrics/LineLength -D -E'
+let g:ale_python_flake8_options='--ignore=E501'
 
 if has("gui_running")
     set guioptions=egmrt
