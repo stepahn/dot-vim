@@ -50,6 +50,7 @@ if dein#load_state('/home/pi/.vim/dein')
   call dein#add('vim-scripts/ConflictMotions')
   call dein#add('vim-scripts/ConflictDetection')
   call dein#add('rizzatti/dash.vim')
+  call dein#add('vim-airline/vim-airline')
 
   " Required:
   call dein#end()
