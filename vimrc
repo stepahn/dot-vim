@@ -53,6 +53,7 @@ if dein#load_state('/home/pi/.vim/dein')
   call dein#add('rizzatti/dash.vim')
   call dein#add('vim-airline/vim-airline')
   call dein#add('w0rp/ale')
+  call dein#add('airblade/vim-gitgutter')
 
   " Required:
   call dein#end()
